@@ -1,37 +1,38 @@
-# Pitch: [Game name]
-
-> **What I expect from your game**
-> - **Genre:** hybrid-casual, Android, portrait, played with one thumb. Theme and genre are your choice.
->   Ideas: sort puzzles (Hexa Sort, Water Sort), block puzzles (Block Blast), merge games, one-thumb runners (Subway Surfers), stacking or timing games (Stack), one-thumb action with upgrades (Archero), idle tap games.
-> - **Core loop:** one simple mechanic that is fun in seconds.
-> - **Meta:** a currency and something to spend it on (upgrades, unlocks, a place to build).
-> - **Sessions:** 1–3 minutes.
-> - **Goals:** clear things the player achieves (finish a level, reach a score, unlock an upgrade). Progress you could count.
-> - **Size:** about 3 levels for one person. Bigger team, bigger game: a team of 2–3 builds more (extra levels or an extra system), agreed after the pitch. This is a software engineering course: put your effort into the code, the systems and the data, not into content.
-> - **Look:** placeholder or free art is fine. Fun matters more than looks.
-
-Keep it to one page. Short answers are fine.
+# Pitch: Color Jar
 
 ## Core loop
-What does the player do again and again, with one thumb?
+Tap a jar to pick it, then tap another jar to pour the top color into it.
+A pour only works if the target jar has room and its top color matches (or it's empty).
+Sort every color into its own jar to finish the level.
 
 ## Meta
-What do they earn, spend and unlock?
+The player earns coins for every level they finish, with a bonus for using fewer moves.
+Coins are spent on helpers (Undo, an extra empty jar) and on unlocking new jar and color themes.
 
 ## Why come back?
-Which 2 hooks bring players back tomorrow? (daily reward, streak, event, lives, collection, notification…)
+1. **Daily reward:** a coin bonus for opening the game each day, bigger on a streak.
+2. **Collection:** new jar and color themes to unlock and collect with coins.
 
 ## Who and when
-Who plays it, where, and how long is one session? (target: 1–3 minutes)
+Casual players who want a short, relaxing puzzle during a break: on the bus, waiting in line, before sleep.
+One level takes 1–3 minutes.
 
 ## Goals
-What does the player achieve? List the moments of progress (level completed, upgrade unlocked, new record…).
+- Level completed
+- 3 stars earned (finished within the move limit)
+- New theme unlocked
+- Daily streak kept
+- All levels completed
 
 ## Feel
-What will feel "crunchy"? (sound, motion, particles, haptics, timing, numbers)
+- A smooth pour animation with a liquid sound
+- A small particle burst and a "ding" when a jar is filled with one color
+- A short vibration (haptic) on every pour and on level complete
+- A shake when the player tries a wrong pour
+- Coins counting up on the win screen
 
 ## Scope check
-- [ ] Hybrid-casual: simple core + a meta layer
-- [ ] Portrait, one thumb
-- [ ] 1–3 minute sessions
-- [ ] Small: about 3 levels (more for a team of 2–3)
+- [x] Hybrid-casual: simple core + a meta layer
+- [x] Portrait, one thumb
+- [x] 1–3 minute sessions
+- [x] Small: about 3 levels
