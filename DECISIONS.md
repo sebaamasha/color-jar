@@ -26,8 +26,8 @@ Who: Yuval
 
 <!-- Your entries start here -->
 ## 2026-11-03 — Game direction: a Water Sort puzzle ("Color Jar")
-Options: Water Sort / Tile Match / Stack / Block Blast / Parking Jam
-Chose: Water Sort
-Why: I'm working alone and this is my first game, so I wanted something challenging but realistic to finish. Water Sort has simple tap controls that fit one thumb, clear levels and goals, and the main work is in the logic and the data (pour rules, win check, level data, and maybe generating solvable levels), which fits a software engineering course.
-AI: Claude suggested several genres and ranked them by difficulty for a solo beginner; I compared them and chose Water Sort myself.
-Who: Seba Amasha
+- **Options:** Water Sort / Tile Match / Stack / Block Blast / Parking Jam
+- **Chose:** Water Sort
+- **Why:** I'm working alone and this is my first game, so I wanted something challenging but realistic to finish. Water Sort has simple tap controls that fit one thumb, clear levels and goals, and the main work is in the logic and the data (pour rules, win check, level data, and maybe generating solvable levels), which fits a software engineering course.
+- **AI:** Claude suggested several genres and ranked them by difficulty for a solo beginner; I compared them and chose Water Sort myself.
+- **Who:** Seba Amasha
