@@ -1,10 +1,9 @@
-# [Game name]
+# Color Jar
 
-**Team:** [Name 1] · [Name 2] · [Name 3]
-**Course:** Mobile Game Development, Shenkar
+**Team:** Seba Amasha · **Course:** Mobile Game Development, Shenkar
 
 ## The game in one sentence
-[What does the player do, and why do they come back tomorrow?]
+Pour colors between jars to sort each color into its own jar, and come back every day for a daily coin reward and new jar themes to unlock.
 
 ## How to open and build
 1. Open the project in Unity 6 LTS (the exact version is on Moodle).
@@ -13,7 +12,7 @@
 
 ## Repo map
 | File | What it is |
-| --- | --- |
+|---|---|
 | `pitch.md` | One-page pitch of the game |
 | `DECISIONS.md` | Every real decision the team made, and why |
 | `AGENTS.md` | Context for AI coding tools: architecture, rules, conventions |
