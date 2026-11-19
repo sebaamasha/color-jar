@@ -1,25 +1,21 @@
-# AGENTS.md — context for AI coding tools
-
-AI tools read this file before working on the repo. Keep it short, true and up to date.
-If you use Claude Code, also add a `CLAUDE.md` containing one line: `@AGENTS.md`.
+# AGENTS.md: context for AI coding tools
 
 ## The game
-[One paragraph: genre, core loop, meta layer, target device (Android, portrait, one thumb).]
-
-## Tech
-- Engine: Unity 6 LTS, C#
-- Target: Android (portrait)
-- [Add packages and services as you add them]
+Color Jar: a Water Sort style puzzle. Tap a jar to pick it, then tap another jar to pour the top color into it. Sort every color into its own jar to finish the level. Levels take 1–3 minutes. The player earns coins for finishing levels and spends them on helpers (Undo, an extra jar) and on new jar themes. Android, portrait, one thumb.
 
 ## Architecture
-[Fill in during the course: scenes, main systems, where config lives, init order.]
+- Unity project: `ColorJar/`
+- Scenes (`Assets/Scenes`): Bootstrap (first in the Scene List, starts the services, no UI) → Home ⇄ Level
+- Services (`Assets/Scripts/Services`), started in Bootstrap in this order:
+  1. Save: `ISaveService` → `PlayerPrefsSaveService`
+  2. Settings: `ISettingsService` → `SettingsService` (SoundOn), saved through `ISaveService`
+- Every script finds the services through the static class `Services` (`Services.Save`, `Services.Settings`).
+- Screens use `Services`, never `PlayerPrefs` directly. Only `PlayerPrefsSaveService` touches `PlayerPrefs`.
+- Two assemblies: `Game` (screens and gameplay: Bootstrap, ScreenFlow, CoinCounter, SoundButton, SafeAreaFitter) references `Services`. `Services` never references `Game`.
+- `Assets/Editor/PlayFromBootstrap.cs` makes every Play in the editor start from Bootstrap.
 
 ## Rules for AI
-- Follow the existing folder structure and naming. Don't create new top-level folders.
-- Don't invent APIs. If unsure about an SDK or Unity API, say so and point to the docs.
-- Don't change Player Settings, package name, API levels or build settings unless asked.
-- Keep changes small and explain what you changed and why.
-- Never commit secrets (keystores, passwords, API keys).
-
-## Conventions
-- [Naming, code style, where scripts go — fill in as a team]
+- Don't change Player Settings, the package name or API levels.
+- Don't invent APIs. If unsure, say so and point to the official docs.
+- New services go behind an interface in `Services` and are started in Bootstrap, in order.
+- Keep changes small. Say what you changed and why. Change nothing you were not asked to.

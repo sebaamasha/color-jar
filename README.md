@@ -16,3 +16,18 @@ Pour colors between jars to sort each color into its own jar, and come back ever
 | `pitch.md` | One-page pitch of the game |
 | `DECISIONS.md` | Every real decision the team made, and why |
 | `AGENTS.md` | Context for AI coding tools: architecture, rules, conventions |
+
+## Architecture
+Scenes, services and init order:
+
+```mermaid
+flowchart LR
+    B["Bootstrap<br/>scene 0, no UI"] -->|"1 · Save"| S1["ISaveService<br/>→ PlayerPrefsSaveService"]
+    B -->|"2 · Settings"| S2["ISettingsService<br/>→ SettingsService (SoundOn)"]
+    S2 -->|saves through| S1
+    B -->|"then loads"| H["Home<br/>scene 1"]
+    H -->|Play| L["Level<br/>scene 2"]
+    L -->|Back| H
+```
+
+Two assemblies: **Game** (Bootstrap, ScreenFlow, CoinCounter, SoundButton, SafeAreaFitter) → **Services** (ISaveService, PlayerPrefsSaveService, ISettingsService, SettingsService, Services). Services never references Game.
