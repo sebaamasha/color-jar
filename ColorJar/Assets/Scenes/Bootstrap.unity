@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2125edf8d1455e42a58d3c9ace6b73a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bootstrap
+  economy: {fileID: 11400000, guid: 4960166590d24f444be9398394c3caf7, type: 2}
 --- !u!4 &2015129703
 Transform:
   m_ObjectHideFlags: 0
