@@ -23,11 +23,22 @@ Scenes, services and init order:
 ```mermaid
 flowchart LR
     B["Bootstrap<br/>scene 0, no UI"] -->|"1 · Save"| S1["ISaveService<br/>→ PlayerPrefsSaveService"]
-    B -->|"2 · Settings"| S2["ISettingsService<br/>→ SettingsService (SoundOn)"]
-    S2 -->|saves through| S1
+    B -->|"2 · Config"| S2["IConfigService<br/>→ ScriptableObjectConfigService<br/>(EconomyConfig.asset)"]
+    B -->|"3 · Settings"| S3["ISettingsService<br/>→ SettingsService (SoundOn)"]
+    S3 -->|saves through| S1
     B -->|"then loads"| H["Home<br/>scene 1"]
     H -->|Play| L["Level<br/>scene 2"]
-    L -->|Back| H
+    L -->|"Win (+coins) / Lose / Back"| H
 ```
 
-Two assemblies: **Game** (Bootstrap, ScreenFlow, CoinCounter, SoundButton, SafeAreaFitter) → **Services** (ISaveService, PlayerPrefsSaveService, ISettingsService, SettingsService, Services). Services never references Game.
+Two assemblies: **Game** (Bootstrap, ScreenFlow, CoinCounter, SoundButton, UpgradeButton, LevelResult, ExtraJarsLabel, SafeAreaFitter) → **Services** (ISaveService, PlayerPrefsSaveService, IConfigService, ScriptableObjectConfigService, EconomyConfig, ISettingsService, SettingsService, Services). Services never references Game.
+
+
+## Economy
+- Economy sheet: [Color Jar – Economy sheet](https://docs.google.com/spreadsheets/d/11NBfF-GjFemjhJcRl-Lgsii-D6ruwureKFjtRiFAJ14/edit?usp=sharing)
+- Every economy number lives in `ColorJar/Assets/Config/EconomyConfig.asset`, read through `Services.Config.Economy`.
+- Sources: 50 coins per level won, about 2 levels per session.
+- Sink: the Extra Jar upgrade (one more Extra Jar per level), base cost 80, growth 1.5, max level 3.
+
+## Art
+Where every image comes from: [CREDITS.md](CREDITS.md)

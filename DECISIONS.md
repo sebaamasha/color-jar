@@ -25,6 +25,15 @@ Who: Yuval
 ---
 
 <!-- Your entries start here -->
+
+## 2026-11-26 — The first sink: an Extra Jar upgrade, base 80, growth 1.5, max 3
+- **Options:** extra time per level / an extra jar / a bigger coin reward per level / new jar themes
+- **Chose:** an Extra Jar upgrade. Each level of the upgrade gives one more Extra Jar use in every level. Base cost 80, growth 1.5, max level 3.
+- **Why:** in the sort games I played, coins bought an extra jar or more time when I was stuck. Color Jar has no timer, so the extra jar fits the game as it is (it's already a helper in my pitch). Max 3 and a growing price answer the feedback on my pitch: helpers stay limited, so buying them doesn't make levels trivial. With 50 coins a level and about 2 levels a session, base 80 gives the first upgrade in the first session and the next ones every 1–2 sessions, so both checks in the economy sheet say Yes.
+- **Later:** I'd rather the extra jar be bought inside a level only when I need it and gone after the level. For this milestone I kept a permanent upgrade, because the sink has to be remembered after closing the app. Timed levels are also an idea for the final game, and then extra time could be a second sink.
+- **AI:** Claude suggested a few options and the first numbers; the ideas of extra jar or extra time came from games I played, and I chose the extra jar and the max of 3.
+- **Who:** Seba Amasha
+
 ## 2026-11-19 — Save goes through an interface (ISaveService)
 - **Options:** call PlayerPrefs directly from every screen / one ISaveService interface with a PlayerPrefs implementation behind it
 - **Chose:** ISaveService, with PlayerPrefsSaveService today
